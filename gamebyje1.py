@@ -156,7 +156,7 @@ class Pikes:
 
         global pikeid
 
-        self.pikeid = canvas.create_rectangle(self.x, -900, self.x2, 100, fill=color)
+        self.pikeid = canvas.create_rectangle(self.x, 100, self.x2, 100, fill=color)
 
         # print('pike class created')
 
