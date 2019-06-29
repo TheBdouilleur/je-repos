@@ -4,7 +4,10 @@ from tkinter import *
 calculator = Tk()
 
 # And personalize it
-calculator.geometry("415x405")
+width = 335
+height = 405
+geometrie = "{}x{}".format(width, height)
+calculator.geometry(geometrie)
 calculator.resizable(0, 0)
 calculator.title('Pocket calculator for Bdouilleurs')
 calculator.iconbitmap('Pythonsignev.ico')
@@ -136,40 +139,40 @@ def clear_button(evt = None):
     writing.delete(0, END)
 
 
-button_zero = Button(can_button, text=' 0 ', font=('Impossible', 30), bg='green', fg='black', padx=15,
-                     command=zero_button)
-button_one = Button(can_button, text=' 1 ', font=('Impossible', 30), bg='green', fg='black', padx=15,
-                    command=one_button)
-button_two = Button(can_button, text=' 2 ', font=('Impossible', 30), bg='green', fg='black', padx=15,
-                    command=two_button)
-button_tree = Button(can_button, text=' 3 ', font=('Impossible', 30), bg='green', fg='black', padx=15,
-                     command=three_button)
-button_four = Button(can_button, text=' 4 ', font=('Impossible', 30), bg='green', fg='black', padx=15,
-                     command=four_button)
-button_five = Button(can_button, text=' 5 ', font=('Impossible', 30), bg='green', fg='black', padx=15,
-                     command=five_button)
-button_six = Button(can_button, text=' 6 ', font=('Impossible', 30), bg='green', fg='black', padx=15,
-                    command=six_button)
-button_seven = Button(can_button, text=' 7 ', font=('Impossible', 30), bg='green', fg='black', padx=15,
-                      command=seven_button)
-button_eight = Button(can_button, text=' 8 ', font=('Impossible', 30), bg='green', fg='black', padx=15,
-                      command=eight_button)
-button_nine = Button(can_button, text=' 9 ', font=('Impossible', 30), bg='green', fg='black', padx=15,
-                     command=nine_button)
-button_plus = Button(can_button, text=' + ', font=('Impossible', 30), bg='green', fg='black', padx=15,
-                     command=plus_button)
-button_moins = Button(can_button, text=' - ', font=('Impossible', 30), bg='green', fg='black', padx=15
-                      , command=moins_button)
-button_multiply = Button(can_button, text='  X  ', font=('Impossible', 30), bg='green', fg='black', padx=15,
-                         command=multiply_button)
-button_divise = Button(can_button, text=' / ', font=('Impossible', 30), bg='green', fg='black', padx=15,
-                       command=division_button)
-button_equal = Button(can_button, text=' = ', font=('Impossible', 30), bg='green', fg='black', padx=15,
-                      command=equal_button)
-button_clear = Button(can_button, text=' C ', font=('Impossible', 30), bg='green', fg='black', padx=15,
-                      command=clear_button)
-button_point = Button(can_button, text=' . ', font=('Impossible', 30), bg='green', fg='black', padx=15,
-                      command=point_button)
+button_zero = Button(can_button, text='0', font=('Impossible', 30), bg='green', fg='black', padx=15,
+                     command=zero_button, width=2)
+button_one = Button(can_button, text='1', font=('Impossible', 30), bg='green', fg='black', padx=15,
+                    command=one_button, width=2)
+button_two = Button(can_button, text='2', font=('Impossible', 30), bg='green', fg='black', padx=15,
+                    command=two_button, width=2)
+button_tree = Button(can_button, text='3', font=('Impossible', 30), bg='green', fg='black', padx=15,
+                     command=three_button, width=2)
+button_four = Button(can_button, text='4', font=('Impossible', 30), bg='green', fg='black', padx=15,
+                     command=four_button, width=2)
+button_five = Button(can_button, text='5', font=('Impossible', 30), bg='green', fg='black', padx=15,
+                     command=five_button, width=2)
+button_six = Button(can_button, text='6', font=('Impossible', 30), bg='green', fg='black', padx=15,
+                    command=six_button, width=2)
+button_seven = Button(can_button, text='7', font=('Impossible', 30), bg='green', fg='black', padx=15,
+                      command=seven_button, width=2)
+button_eight = Button(can_button, text='8', font=('Impossible', 30), bg='green', fg='black', padx=15,
+                      command=eight_button, width=2)
+button_nine = Button(can_button, text='9', font=('Impossible', 30), bg='green', fg='black', padx=15,
+                     command=nine_button, width=2)
+button_plus = Button(can_button, text='+', font=('Impossible', 30), bg='green', fg='black', padx=15,
+                     command=plus_button, width=2)
+button_moins = Button(can_button, text='-', font=('Impossible', 30), bg='green', fg='black', padx=15
+                      , command=moins_button, width=2)
+button_multiply = Button(can_button, text='X', font=('Impossible', 30), bg='green', fg='black', padx=15,
+                         command=multiply_button, width=2)
+button_divise = Button(can_button, text='/', font=('Impossible', 30), bg='green', fg='black', padx=15,
+                       command=division_button, width=2)
+button_equal = Button(can_button, text='=', font=('Impossible', 30), bg='green', fg='black', padx=15,
+                      command=equal_button, width=7)
+button_clear = Button(can_button, text='C', font=('Impossible', 30), bg='green', fg='black', padx=15,
+                      command=clear_button, width=2)
+button_point = Button(can_button, text='.', font=('Impossible', 30), bg='green', fg='black', padx=15,
+                      command=point_button, width=2)
 
 button_one.grid(row=0)
 button_two.grid(row=0, column=1)
@@ -184,8 +187,8 @@ button_plus.grid(row=0, column=3)
 button_moins.grid(row=0, column=4)
 button_multiply.grid(row=1, column=3)
 button_divise.grid(row=1,column=4)
-button_equal.grid(row=2, column=3)
-button_clear.grid(row=2, column=4)
+button_equal.grid(row=2, column=3, columnspan=2)
+button_clear.grid(row=3, column=0)
 button_zero.grid(row=3, column=1)
 button_point.grid(row=3, column=2)
 
@@ -207,6 +210,7 @@ calculator.bind('+', plus_button)
 calculator.bind('-', moins_button)
 calculator.bind('*', multiply_button)
 calculator.bind('/', division_button)
+calculator.bind("<Return>", equal_button)
 
 
 calculator.mainloop()
