@@ -108,7 +108,7 @@ def division_button(evt = None):
     div = True
 
 
-def equal_button(evt = None): # TODO: entry key for equal
+def equal_button(evt = None):
     global p
     global moins
     global number
@@ -139,25 +139,25 @@ def clear_button(evt = None):
     writing.delete(0, END)
 
 
-button_zero = Button(can_button, text='0', font=('Impossible', 30), bg='green', fg='black', padx=15,
+button_zero = Button(can_button, text='0', font=('Impossible', 30), bg='#179A04', fg='black', padx=15,
                      command=zero_button, width=2)
-button_one = Button(can_button, text='1', font=('Impossible', 30), bg='green', fg='black', padx=15,
+button_one = Button(can_button, text='1', font=('Impossible', 30), bg='#179A04', fg='black', padx=15,
                     command=one_button, width=2)
-button_two = Button(can_button, text='2', font=('Impossible', 30), bg='green', fg='black', padx=15,
+button_two = Button(can_button, text='2', font=('Impossible', 30), bg='#179A04', fg='black', padx=15,
                     command=two_button, width=2)
-button_tree = Button(can_button, text='3', font=('Impossible', 30), bg='green', fg='black', padx=15,
+button_tree = Button(can_button, text='3', font=('Impossible', 30), bg='#179A04', fg='black', padx=15,
                      command=three_button, width=2)
-button_four = Button(can_button, text='4', font=('Impossible', 30), bg='green', fg='black', padx=15,
+button_four = Button(can_button, text='4', font=('Impossible', 30), bg='#179A04', fg='black', padx=15,
                      command=four_button, width=2)
-button_five = Button(can_button, text='5', font=('Impossible', 30), bg='green', fg='black', padx=15,
+button_five = Button(can_button, text='5', font=('Impossible', 30), bg='#179A04', fg='black', padx=15,
                      command=five_button, width=2)
-button_six = Button(can_button, text='6', font=('Impossible', 30), bg='green', fg='black', padx=15,
+button_six = Button(can_button, text='6', font=('Impossible', 30), bg='#179A04', fg='black', padx=15,
                     command=six_button, width=2)
-button_seven = Button(can_button, text='7', font=('Impossible', 30), bg='green', fg='black', padx=15,
+button_seven = Button(can_button, text='7', font=('Impossible', 30), bg='#179A04', fg='black', padx=15,
                       command=seven_button, width=2)
-button_eight = Button(can_button, text='8', font=('Impossible', 30), bg='green', fg='black', padx=15,
+button_eight = Button(can_button, text='8', font=('Impossible', 30), bg='#179A04', fg='black', padx=15,
                       command=eight_button, width=2)
-button_nine = Button(can_button, text='9', font=('Impossible', 30), bg='green', fg='black', padx=15,
+button_nine = Button(can_button, text='9', font=('Impossible', 30), bg='#179A04', fg='black', padx=15,
                      command=nine_button, width=2)
 button_plus = Button(can_button, text='+', font=('Impossible', 30), bg='green', fg='black', padx=15,
                      command=plus_button, width=2)
