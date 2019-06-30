@@ -5,7 +5,7 @@ class Calculate(Tk):
     def __init__(self):
         Tk.__init__(self)
         self.width = 335
-        self.height = 426
+        self.height = 500
         self.number = IntVar()
         self.number2 = IntVar()
         self.p = False
@@ -68,7 +68,7 @@ class Calculate(Tk):
         self.button_multiply = Button(self.can_button, text='X', font=('Impossible', 30), bg='green', fg='black',
                                       padx=15,
                                       command=self.multiply_button, width=2)
-        self.button_divise = Button(self.can_button, text='/', font=('Impossible', 30), bg='green', fg='black', padx=15,
+        self.button_divise = Button(self.can_button, text='÷', font=('Impossible', 30), bg='green', fg='black', padx=15,
                                     command=self.division_button, width=2)
         self.button_equal = Button(self.can_button, text='=', font=('Impossible', 30), bg='green', fg='black', padx=15,
                                    command=self.equal_button, width=7)
@@ -76,32 +76,36 @@ class Calculate(Tk):
                                    command=self.clear_button, width=2)
         self.button_point = Button(self.can_button, text='.', font=('Impossible', 30), bg='green', fg='black', padx=15,
                                    command=self.point_button, width=2)
-        self.button_sqrt = Button(self.can_button, text='Vx', font=('Impossible', 30), bg='green', fg='black', padx=15,
+        self.button_sqrt = Button(self.can_button, text='√', font=('Impossible', 30), bg='green', fg='black', padx=15,
                                   command=self.sqrt_button, width=2)
         self.button_square = Button(self.can_button, text='^2', font=('Impossible', 30), bg='green', fg='black',
                                     padx=15,
                                     command=self.square_button, width=2)
 
+        self.button_pm = Button(self.can_button, text='±', font=('Impossible', 30), bg='green', fg='black',
+                                    padx=15, width=2, command=self.pm_button)
+
     def grid_button(self):
-        self.button_one.grid(row=0)
-        self.button_two.grid(row=0, column=1)
-        self.button_tree.grid(row=0, column=2)
-        self.button_four.grid(row=1)
-        self.button_five.grid(row=1, column=1)
-        self.button_six.grid(row=1, column=2)
-        self.button_seven.grid(row=2)
-        self.button_eight.grid(row=2, column=1)
-        self.button_nine.grid(row=2, column=2)
-        self.button_plus.grid(row=1, column=3)
-        self.button_moins.grid(row=1, column=4)
-        self.button_multiply.grid(row=2, column=3)
-        self.button_divise.grid(row=2, column=4)
-        self.button_equal.grid(row=3, column=3, columnspan=2)
-        self.button_clear.grid(row=3, column=0)
-        self.button_zero.grid(row=3, column=1)
-        self.button_point.grid(row=3, column=2)
-        self.button_sqrt.grid(row=0, column=3)
-        self.button_square.grid(row=0, column=4)
+        self.button_one.grid(row=1)
+        self.button_two.grid(row=1, column=1)
+        self.button_tree.grid(row=1, column=2)
+        self.button_four.grid(row=2)
+        self.button_five.grid(row=2, column=1)
+        self.button_six.grid(row=2, column=2)
+        self.button_seven.grid(row=3)
+        self.button_eight.grid(row=3, column=1)
+        self.button_nine.grid(row=3, column=2)
+        self.button_plus.grid(row=2, column=3)
+        self.button_moins.grid(row=2, column=4)
+        self.button_multiply.grid(row=3, column=3)
+        self.button_divise.grid(row=3, column=4)
+        self.button_equal.grid(row=4, column=3, columnspan=2)
+        self.button_clear.grid(row=0, column=0)
+        self.button_zero.grid(row=4, column=1)
+        self.button_point.grid(row=4, column=2)
+        self.button_sqrt.grid(row=1, column=3)
+        self.button_square.grid(row=1, column=4)
+        self.button_pm.grid(row=4)
 
     def bind_calculator(self):
         self.bind('1', self.one_button)
@@ -130,6 +134,10 @@ class Calculate(Tk):
         self.menu_file.add_separator()
         self.menu_file.add_command(label='Quit', command=self.quit)
         self.menu.add_cascade(label='File', menu=self.menu_file)
+
+        self.menu_help = Menu(self.menu, tearoff=0)
+        self.menu_help.add_command(label='About us', command=self.menu_aboutus)
+        self.menu.add_cascade(label='Help', menu=self.menu_help)
 
     def zero_button(self, evt=None):
         self.writing.insert(END, '0')
@@ -222,8 +230,24 @@ class Calculate(Tk):
     def clear_button(self, evt=None):
         self.writing.delete(0, END)
 
+    def pm_button(self, evt=None):
+        self.number = self.writing.get()
+        self.number = float(self.number)
+        self.number = -self.number
+        self.writing.delete(0, END)
+        self.writing.insert(0, self.number)
+
     def new_menu(self):
         calculator2 = Calculate()
+
+    def menu_aboutus(self):
+        win = Tk()
+        win.title('About us')
+        win.iconbitmap('Pythonsignev.ico')
+        win.geometry("300x100+200+50")
+        message = Message(win, text='We are two JE (juneval expert)', font=('Impossible', 20))
+        message.pack()
+        win.mainloop()
 
 # Create the window
 calculator = Calculate()
