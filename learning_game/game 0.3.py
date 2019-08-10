@@ -56,6 +56,7 @@ class Level(Tk):
         self.heart_image = PhotoImage(file="heart.png", master=self.can)
         self.heart = self.can.create_image((20, 20), image=self.heart_image)
         self.time = time
+        self.time_save = time
         self.live = 5
 
         self.frame = Frame(self, bg='#3FAC17')
@@ -94,6 +95,7 @@ class Level(Tk):
                 self.live -=1
                 self.can.delete(self.live_text)
                 self.live_text = self.can.create_text(50, 20, text=self.live, font=('Impossible', 25))
+                self.time = self.time_save
 
     def pass_b(self):
         self.time = 0.01
